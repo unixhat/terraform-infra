@@ -7,6 +7,8 @@ resource "aws_instance" "example" {
   ami = "${lookup(var.AMIS, var.AWS_REGION)}"
   instance_type = "t2.micro"
   key_name = "${aws_key_pair.mykey.key_name}"
+  subnet_id = "${aws_subnet.main-public-1.id}"
+  vpc_security_group_ids = ["${aws_security_group.allow-ssh.id}"]
 
   provisioner "file" {
     source = "script.sh"
@@ -27,3 +29,4 @@ resource "aws_instance" "example" {
 output "ip" {
     value = "${aws_instance.example.public_ip}"
 }
+
