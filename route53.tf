@@ -1,4 +1,4 @@
-resource "aws_route53_zone" "unixhatcom" {
+/* resource "aws_route53_zone" "unixhatcom" {
    name = "unixhat.com"
 }
 resource "aws_route53_record" "server1-record" {
@@ -28,7 +28,4 @@ resource "aws_route53_record" "mail1-record" {
      "10 aspmx3.googlemail.com."
    ]
 }
-
-output "ns-servers" {
-   value = "${aws_route53_zone.unixhatcom.name_servers}"
-}
+*/

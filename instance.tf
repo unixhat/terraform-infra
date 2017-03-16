@@ -9,6 +9,7 @@ resource "aws_instance" "example" {
   key_name = "${aws_key_pair.mykey.key_name}"
   subnet_id = "${aws_subnet.main-public-1.id}"
   vpc_security_group_ids = ["${aws_security_group.allow-ssh.id}"]
+/*
   user_data = "${data.template_cloudinit_config.cloudinit-example.rendered}"
 
   provisioner "file" {
@@ -24,9 +25,9 @@ resource "aws_instance" "example" {
   connection {
     user = "${var.INSTANCE_USERNAME}"
     private_key = "${file("${var.PATH_TO_PRIVATE_KEY}")}"
-  }
+  } */
 }
-
+/*
 resource "aws_ebs_volume" "ebs-volume-1" {
     availability_zone = "ap-southeast-1a"
     size = 20
@@ -40,9 +41,5 @@ resource "aws_volume_attachment" "ebs-volume-1-attachment" {
   device_name = "${var.INSTANCE_DEVICE_NAME}"
   volume_id = "${aws_ebs_volume.ebs-volume-1.id}"
   instance_id = "${aws_instance.example.id}"
-}
-
-output "ip" {
-    value = "${aws_instance.example.public_ip}"
-}
-
+} 
+*/
