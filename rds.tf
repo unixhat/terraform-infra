@@ -16,7 +16,6 @@ resource "aws_db_parameter_group" "mariadb-parameters" {
 
 }
 
-
 resource "aws_db_instance" "mariadb" {
   allocated_storage    = 100    # 100 GB of storage, gives us more IOPS than a lower number
   engine               = "mariadb"
