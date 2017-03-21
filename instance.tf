@@ -9,7 +9,7 @@ resource "aws_instance" "example" {
   key_name = "${aws_key_pair.mykey.key_name}"
   subnet_id = "${aws_subnet.main-public-1.id}"
   vpc_security_group_ids = ["${aws_security_group.allow-ssh.id}"]
-  iam_instance_profile = "${aws_iam_instance_profile.s3-mybucket-role-instanceprofile.name}"
+#  iam_instance_profile = "${aws_iam_instance_profile.s3-mybucket-role-instanceprofile.name}"
 /*
   user_data = "${data.template_cloudinit_config.cloudinit-example.rendered}"
 

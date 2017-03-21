@@ -24,7 +24,7 @@ data "aws_ip_ranges" "southeast_ec2" {
   regions = [ "ap-southeast-1", "ap-southeast-2" ]
   services = [ "ec2" ]
 }
-
+/*
 resource "aws_security_group" "from_southeast" {
  name = "from_southeast"
 
@@ -61,4 +61,4 @@ resource "aws_security_group" "allow-mariadb" {
   tags {
     Name = "allow-mariadb"
   }
-}
+}*/

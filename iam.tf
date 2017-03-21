@@ -1,3 +1,4 @@
+/*
 # group definition
 resource "aws_iam_group" "administrators" {
     name = "administrators"
@@ -68,4 +69,4 @@ resource "aws_iam_role_policy" "s3-mybucket-role-policy" {
 }
 EOF
 }
-
+*/

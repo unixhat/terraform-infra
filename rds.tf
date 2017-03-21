@@ -1,4 +1,4 @@
-resource "aws_db_subnet_group" "mariadb-subnet" {
+/*resource "aws_db_subnet_group" "mariadb-subnet" {
     name = "mariadb-subnet"
     description = "RDS subnet group"
     subnet_ids = ["${aws_subnet.main-private-1.id}","${aws_subnet.main-private-2.id}"]
@@ -15,7 +15,7 @@ resource "aws_db_parameter_group" "mariadb-parameters" {
    }
 
 }
-/*
+
 resource "aws_db_instance" "mariadb" {
   allocated_storage    = 100    # 100 GB of storage, gives us more IOPS than a lower number
   engine               = "mariadb"
