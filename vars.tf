@@ -26,3 +26,4 @@ variable "INSTANCE_DEVICE_NAME" {
 variable "RDS_PASSWORD" { 
   default = "6rarEvui89"
 }
+#variable "RDS_PASSWORD" {}

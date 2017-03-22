@@ -70,3 +70,48 @@ resource "aws_iam_role_policy" "s3-mybucket-role-policy" {
 EOF
 }
 */
+#elasticbeanstalk
+# iam roles
+resource "aws_iam_role" "app-ec2-role" {
+    name = "app-ec2-role"
+    assume_role_policy = <<EOF
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Action": "sts:AssumeRole",
+      "Principal": {
+        "Service": "ec2.amazonaws.com"
+      },
+      "Effect": "Allow",
+      "Sid": ""
+    }
+  ]
+}
+EOF
+}
+resource "aws_iam_instance_profile" "app-ec2-role" {
+    name = "app-ec2-role"
+    roles = ["${aws_iam_role.app-ec2-role.name}"]
+}
+
+# service
+resource "aws_iam_role" "elasticbeanstalk-service-role" {
+    name = "elasticbeanstalk-service-role"
+    assume_role_policy = <<EOF
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Action": "sts:AssumeRole",
+      "Principal": {
+        "Service": "elasticbeanstalk.amazonaws.com"
+      },
+      "Effect": "Allow",
+      "Sid": ""
+    }
+  ]
+}
+EOF
+}
+
