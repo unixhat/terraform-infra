@@ -1,4 +1,4 @@
-/*resource "aws_db_subnet_group" "mariadb-subnet" {
+resource "aws_db_subnet_group" "mariadb-subnet" {
     name = "mariadb-subnet"
     description = "RDS subnet group"
     subnet_ids = ["${aws_subnet.main-private-1.id}","${aws_subnet.main-private-2.id}"]
@@ -35,4 +35,4 @@ resource "aws_db_instance" "mariadb" {
   tags {
       Name = "mariadb-instance"
   }
-}*/
+}
